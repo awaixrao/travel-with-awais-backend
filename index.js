@@ -4,6 +4,10 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const UserRouter = require("./routes/user.routes");
 const TourRouter = require("./routes/tour.routes");
+const BookingRouter = require("./routes/booking.routes");
+const PaymentRouter = require("./routes/payment.routes");
+
+
 
 
 
@@ -28,8 +32,15 @@ app.get('/', (req, res) => {
 // User Route
 app.use("/user", UserRouter);
 
-// User Route
+// tour Route
 app.use("/tour", TourRouter);
+// Ubookinger Route
+app.use("/booking",BookingRouter );
+
+//payment
+
+app.use("/payment",PaymentRouter );
+
 
 
 

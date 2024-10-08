@@ -34,6 +34,13 @@ const tourSchema = new Schema({
         type: Number, 
         default: 0
     },
+
+    totalSeats: {
+        type: Number
+        },
+    availableSeats: {
+        type: Number
+    },
     available: {
         type: Boolean,
         default: true

@@ -6,7 +6,6 @@ require('dotenv').config();
 
 
 const UserRegister = async (req, res) => {
-    console.log("abc")
 
     try {
         const { name, email, password, gender } = req.body;

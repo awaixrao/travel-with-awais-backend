@@ -3,14 +3,12 @@ const Tour = require('../models/Tour.model');
 
 // Create a new tour
 exports.createTour = async (req, res) => {
-    console.log("Tour create");
 
     try {
         const { photos, ...rest } = req.body;
 
         // If photos is not an array, make it one
         const photosArray = Array.isArray(photos) ? photos : [photos];
-        console.log(photosArray);
 
         const newTour = new Tour({ ...rest, photos: photosArray });
 
@@ -40,11 +38,9 @@ exports.getAllTours = async (req, res) => {
 // Get a single tour by ID
 exports.getTourById = async (req, res) => {
     try {
-        console.log(req.params.id);
 
         // Fetch the tour by ID
         const tour = await Tour.findById(req.params.id);
-        console.log(tour);
 
         // Check if the tour exists
         if (!tour) {

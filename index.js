@@ -6,10 +6,7 @@ const UserRouter = require("./routes/user.routes");
 const TourRouter = require("./routes/tour.routes");
 const BookingRouter = require("./routes/booking.routes");
 const PaymentRouter = require("./routes/payment.routes");
-
-
-
-
+const EmailRouter = require('./routes/email.Routes');
 
 
 const port = 3001;
@@ -27,8 +24,6 @@ app.get('/', (req, res) => {
 
 
 
-
-
 // User Route
 app.use("/user", UserRouter);
 
@@ -38,13 +33,10 @@ app.use("/tour", TourRouter);
 app.use("/booking",BookingRouter );
 
 //payment
-
 app.use("/payment",PaymentRouter );
 
-
-
-
-
+//email
+app.use('/emails', EmailRouter);
 
 
 
